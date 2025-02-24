@@ -41,7 +41,7 @@ if st.button("Generate"):
         img_bytes.seek(0)  # Reset file pointer
 
         # Display the QR code
-        st.image(img_bytes, caption="Generated QR Code", use_column_width=True)
+        st.image(img_bytes, caption="Generated QR Code", use_container_width=True)
 
         # Provide a download button
         st.download_button("Download QR Code", img_bytes, "qr_code.png", "image/png")
@@ -60,7 +60,7 @@ if uploaded_file:
     scanned_data = scan_qr_code(temp_file_path)
     
     # Display uploaded image
-    st.image(uploaded_file, caption="Uploaded QR Code", use_column_width=True)
+    st.image(uploaded_file, caption="Uploaded QR Code", use_container_width=True)
 
     # Show scanned data
     if scanned_data == "No QR Code detected":
